@@ -1,5 +1,5 @@
 const headings = [
-    "Hello",
+    "Hello Again",
     "Psych!",
     "Bet you thought that would work",
     "Click harder",
