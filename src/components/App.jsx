@@ -16,24 +16,28 @@ function App() {
     return randomText
   }
 
-  function btnClick() {
+  function handleClick() {
     setHeadingText(randomHeading);
   }
 
-  function onHover() {
+  function handleOnHover() {
     setBtnClass("hover")
   }
 
-  function mouseOut() {
+  function handleMouseOut() {
     setBtnClass("")
   }
 
   return (
-    <div className = "container">
+    <div className="container">
       <h1>{headingText}</h1>
       <div className="small-container">
         <input type="text" placeholder="What's your name?" />
-        <button className={btnClass} onClick={btnClick} onMouseOver={onHover} onMouseOut={mouseOut}>Submit</button>
+        <button
+          className={btnClass}
+          onClick={handleClick}
+          onMouseOver={handleOnHover}
+          onMouseOut={handleMouseOut}>Submit</button>
       </div>
     </div >
   );
