@@ -5,6 +5,7 @@ function App() {
 
   const [headingText, setHeadingText] = useState("Hello")
   const [btnClass, setBtnClass] = useState("");
+  const [name, setName] = useState("");
   var newHeading = "";
 
   function randomHeading() {
@@ -16,11 +17,16 @@ function App() {
     return randomText
   }
 
-  function handleClick() {
-    setHeadingText(randomHeading);
+  function handleChange(event){
+    setName(event.target.value)
   }
 
-  function handleOnHover() {
+  function handleClick() {
+    name ? setHeadingText("Hello, " + name) : setHeadingText(randomHeading);
+    setName("");
+  }
+
+  function handleOnHover(event) {
     setBtnClass("hover")
   }
 
@@ -32,7 +38,11 @@ function App() {
     <div className="container">
       <h1>{headingText}</h1>
       <div className="small-container">
-        <input type="text" placeholder="What's your name?" />
+        <input 
+          type="text" 
+          placeholder="What's your name?"
+          onChange={handleChange}
+          value={name} />
         <button
           className={btnClass}
           onClick={handleClick}
